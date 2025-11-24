@@ -1,0 +1,197 @@
+/* ---------------------------------------------------------
+   1. Load Capcom’s variable Noto Sans (Source Sans 3 VF)
+--------------------------------------------------------- */
+
+@font-face {
+  font-family: 'Noto Sans';
+  src: url('assets/SourceSans3-VF.woff2')
+       format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'Oswald';
+  src: url('assets/Oswald-VariableFont_wght.ttf')
+       format('truetype');
+  font-style: italic;
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+html, body {
+  font-family: 'Oswald', sans-serif;
+  background: url('assets/bg_character_frame.png')
+              center / cover no-repeat;
+  color: #fff;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.5;
+}
+
+body {
+  background: transparent;
+}
+
+/* ---------------------------------------------------------
+   2. Typography utilities
+--------------------------------------------------------- */
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.subtle {
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+/* ---------------------------------------------------------
+   3. Icon tags (lp/mp/hp/lk/mk/hk/arrow3)
+   These work like your <lp></lp> custom elements.
+--------------------------------------------------------- */
+
+punch, lp, mp, hp,
+kick, lk, mk, hk,
+d_r, d_dr, d_d, d_dl, d_l, d_neu,
+arrow3, plus {
+  display: inline-block;
+  width: 22px;        /* slightly larger for readability */
+  height: 22px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  margin: 0 2px;      /* small spacing between icons */
+}
+
+lp, mp, hp,
+lk, mk, hk {
+  position: relative;
+  padding-right: 0.9em; /* more room for the letter */
+}
+
+/* The appended letter */
+lp::after, mp::after, hp::after,
+lk::after, mk::after, hk::after {
+  content: var(--letter);
+  font-family: 'Noto Sans', sans-serif;
+  font-weight: 700;
+  position: absolute;
+  right: 0em;  /* inside padding */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Punches */
+lp { --letter: "L"; }
+mp { --letter: "M"; }
+hp { --letter: "H"; }
+
+/* Kicks */
+lk { --letter: "L"; }
+mk { --letter: "M"; }
+hk { --letter: "H"; }
+
+
+/* Punch buttons */
+punch { background-image: url('icons/punch.png'); }
+lp { background-image: url('icons/lp.png'); }
+mp { background-image: url('icons/mp.png'); }
+hp { background-image: url('icons/hp.png'); }
+
+/* Kick buttons */
+kick { background-image: url('icons/kick.png'); }
+lk { background-image: url('icons/lk.png'); }
+mk { background-image: url('icons/mk.png'); }
+hk { background-image: url('icons/hk.png'); }
+
+/* Directional input*/
+d_r { background-image: url('icons/d_r.png'); }
+d_dr { background-image: url('icons/d_dr.png'); }
+d_d { background-image: url('icons/d_d.png'); }
+d_dl { background-image: url('icons/d_dl.png'); }
+d_l { background-image: url('icons/d_l.png'); }
+
+d_neu { background-image: url('icons/d_neu.png'); }
+
+
+
+/* Transiation arrow */
+arrow3 { background-image: url('icons/arrow3.png'); }
+plus { background-image: url('icons/plus.png'); }
+
+/* ---------------------------------------------------------
+   4. SF6-style table
+--------------------------------------------------------- */
+
+table {
+  border-collapse: collapse;
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: rgb(150, 54, 178);
+  border-right-width: 2px;
+  border-right-style: solid;
+  border-right-color: rgb(150, 54, 178);
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: rgb(150, 54, 178);
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: rgb(150, 54, 178);
+  border-image-outset: 0;
+  border-image-repeat: stretch;
+  border-image-slice: 100%;
+  border-image-source: none;
+  border-image-width: 1;
+}
+
+th {
+  font-weight: 700;
+  /*background: #111;*/
+  padding: 10px;
+  border-bottom: 1px solid #333;
+  text-align: left;
+  white-space: nowrap;
+  
+}
+
+
+tbody {
+  background: linear-gradient(
+    90deg,
+    #420862,
+    #24007f 25%,
+    #24007f 50%,
+    #24007f 75%,
+    #420862
+  );
+}
+
+
+thead {
+  background: linear-gradient(
+    90deg,
+    rgba(137, 23, 171, 0),
+    rgba(137, 23, 171, .5) 18%,
+    rgba(234, 0, 255, .5) 50%,
+    rgba(137, 23, 171, .5) 88%,
+    rgba(137, 23, 171, 0)
+  );
+}   
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #333;
+}
+
+/* Add a light hover highlight like SF6 menus */
+
+tbody tr:hover {
+  background: linear-gradient(90deg,#d32dcf,#6a1399 10%,#370587 40%,#370587 60%,#6a1399 90%,#d32dcf);
+  background-size: 200% 100%; /* double width so it can slide */
+  background-position: 100% 0;
+  transition: background-position 0.5s ease;
+} 

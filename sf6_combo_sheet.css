@@ -56,7 +56,10 @@ body {
 
 punch, lp, mp, hp,
 kick, lk, mk, hk,
-d_r, d_dr, d_d, d_dl, d_l, d_neu,
+d_r, d_dr, d_d, d_dl, d_l,
+d_ul, d_u, d_ur,
+d_neu,
+d_rc, d_lc, d_dc,
 arrow3, plus {
   display: inline-block;
   width: 22px;        /* slightly larger for readability */
@@ -114,12 +117,19 @@ d_dr { background-image: url('icons/d_dr.png'); }
 d_d { background-image: url('icons/d_d.png'); }
 d_dl { background-image: url('icons/d_dl.png'); }
 d_l { background-image: url('icons/d_l.png'); }
+d_ul { background-image: url('icons/d_ul.png'); }
+d_u { background-image: url('icons/d_u.png'); }
+d_ur { background-image: url('icons/d_ur.png'); }
+
 
 d_neu { background-image: url('icons/d_neu.png'); }
 
+/* Charged directional input*/
+d_rc { background-image: url('icons/d_rc.png'); }
+d_dc { background-image: url('icons/d_dc.png'); }
+d_lc { background-image: url('icons/d_lc.png'); }
 
-
-/* Transiation arrow */
+/* Transition arrow */
 arrow3 { background-image: url('icons/arrow3.png'); }
 plus { background-image: url('icons/plus.png'); }
 

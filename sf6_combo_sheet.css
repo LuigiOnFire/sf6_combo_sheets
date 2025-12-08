@@ -60,6 +60,7 @@ d_r, d_dr, d_d, d_dl, d_l,
 d_ul, d_u, d_ur,
 d_neu,
 d_rc, d_lc, d_dc,
+d_circ,
 arrow3, plus {
   display: inline-block;
   width: 22px;        /* slightly larger for readability */
@@ -123,6 +124,8 @@ d_ur { background-image: url('icons/d_ur.png'); }
 
 
 d_neu { background-image: url('icons/d_neu.png'); }
+d_circ { background-image: url('icons/d_circ.png'); }
+
 
 /* Charged directional input*/
 d_rc { background-image: url('icons/d_rc.png'); }

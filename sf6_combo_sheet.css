@@ -208,3 +208,155 @@ tbody tr:hover {
   background-position: 100% 0;
   transition: background-position 0.5s ease;
 } 
+
+
+/* ---------------------------------------------------------
+   5. Character Select
+--------------------------------------------------------- */
+
+/* Character select page */
+
+.character-select {
+  width: min(1400px, 95vw);
+  margin: 0 auto;
+  padding: 30px 0 60px;
+}
+
+
+/* Character select header */
+
+.page-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.page-header h1 {
+  margin: 0;
+
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+
+  transform: skew(-8deg);
+}
+
+.page-header h2 {
+  margin: 5px 0 0;
+
+  font-family: 'Noto Sans', sans-serif;
+  font-size: clamp(0.9rem, 2vw, 1.4rem);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+
+/* Character grid */
+
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 0;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+
+/* Character tile */
+
+.character {
+  min-width: 0;
+  margin-left: -8px;
+}
+
+.character:first-child {
+  margin-left: 0;
+}
+
+.character a {
+  position: relative;
+
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 237 / 255;
+
+  background-image: var(--character-image);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+
+  clip-path: polygon(
+    40% 0,
+    100% 0,
+    60% 100%,
+    0 100%
+  );
+
+  transition:
+    transform 0.15s ease,
+    background-image 0.15s ease;
+}
+
+
+/* Character hover state */
+
+.character a:hover {
+  background-image: var(--character-hover);
+
+  transform: translateY(-4px);
+
+  z-index: 2;
+}
+
+
+/* Character name */
+
+.character-name {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 10px;
+
+  text-align: center;
+
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  text-shadow:
+    0 2px 4px #000,
+    0 2px 8px #000;
+
+  pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   6. Character Select Responsive Layout
+--------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .character-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .character-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .character-select {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

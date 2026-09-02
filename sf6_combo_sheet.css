@@ -360,3 +360,47 @@ tbody tr:hover {
     padding-right: 10px;
   }
 }
+
+/* ---------------------------------------------------------
+   7. Navigation Button
+--------------------------------------------------------- */
+
+.back-button {
+  display: inline-block;
+
+  padding: 8px 18px;
+
+  background: #24007f;
+  border: 1px solid #9636b2;
+
+  color: #fff;
+  text-decoration: none;
+
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  clip-path: polygon(
+    8px 0,
+    100% 0,
+    calc(100% - 8px) 100%,
+    0 100%
+  );
+
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
+}
+
+.back-button:hover {
+  background: linear-gradient(
+    90deg,
+    #d32dcf,
+    #6a1399 40%,
+    #370587
+  );
+
+  transform: translateX(-3px);
+}
